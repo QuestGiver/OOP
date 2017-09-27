@@ -19,8 +19,8 @@
     </ProjectConfiguration>
   </ItemGroup>
   <PropertyGroup Label="Globals">
-    <ProjectGuid>{CD9D7F4C-A19D-48CE-94D9-BB14D930A1BE}</ProjectGuid>
-    <RootNamespace>My2UpdateDraw</RootNamespace>
+    <ProjectGuid>{D1F7506B-F01F-4DBA-AEC2-2DCF9204BA57}</ProjectGuid>
+    <RootNamespace>My3Inheritance</RootNamespace>
     <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
   </PropertyGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
@@ -126,15 +126,19 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="Emitter.cpp" />
+    <ClCompile Include="GameObject.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="Officer.cpp" />
+    <ClCompile Include="Person.cpp" />
     <ClCompile Include="Player.cpp" />
-    <ClCompile Include="Shapes.cpp" />
-    <ClCompile Include="Weapons.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="Emitter.h" />
+    <ClInclude Include="GameObject.h" />
+    <ClInclude Include="Officer.h" />
+    <ClInclude Include="Person.h" />
     <ClInclude Include="Player.h" />
-    <ClInclude Include="Shapes.h" />
-    <ClInclude Include="Weapons.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">

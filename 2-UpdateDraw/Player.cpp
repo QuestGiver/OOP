@@ -1,6 +1,8 @@
+#include "..\3-Inheritance\Player.h"
 #include "Player.h"
 #include "sfwdraw.h"
 #include "Weapons.h"
+
 void Player::update()
 {
 
@@ -14,6 +16,28 @@ void Player::update()
 	//}
 	x = sfw::getMouseX();
 	y = sfw::getMouseY();
+
+	if (x < 0)
+	{
+		x = 0;
+
+	}
+
+	if (x > 800)
+	{
+		x = 800;
+	}
+
+	if (y < 0)
+	{
+		y = 0;
+	}
+
+	if (y > 600)
+	{
+		y = 600;
+	}
+
 
 
 

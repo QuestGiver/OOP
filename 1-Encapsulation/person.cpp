@@ -1,3 +1,4 @@
+#include "..\3-Inheritance\Person.h"
 #pragma once
 
 #include<iostream>
@@ -12,6 +13,7 @@ person::person()
 	name = "";
 	age = 0;
 }
+
 
 
 
