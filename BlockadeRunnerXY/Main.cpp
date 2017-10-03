@@ -1,6 +1,7 @@
 #include<iostream>
 #include"sfwdraw.h"
 #include"GameState.h"
+
 int main()
 {
 	//Create a window and a drawing context

@@ -56,14 +56,14 @@ void Emitter::update()
 
 	}
 	//update all of the particles that are active
-	for (int i = 0; i < 100; i++)
-	{
+	//for (int i = 0; i < 100; i++)
+	//{
 
-		if (particulates[i].timeSpan > timer + 1.5f)
-		{
-			particulates[i].enabled == false;
-		}
-	}
+	//	if (particulates[i].timeSpan > timer + 1.5f)
+	//	{
+	//		particulates[i].enabled = false;
+	//	}
+	//}
 
 	for (int i = 0; i < 100; i++)
 	{

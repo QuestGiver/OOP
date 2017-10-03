@@ -80,7 +80,7 @@ void circleParticle::draw()
 {
 	if (enabled == true)
 	{
-		sfw::drawCircle(a.x, a.y, radius);
+		sfw::drawCircle(a.x, a.y, radius, 2, MAGENTA);
 	}
 
 }
