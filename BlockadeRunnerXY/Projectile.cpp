@@ -21,8 +21,8 @@ Projectile::Projectile()
 {
 	enabled = false;
 	rad = 5;
-	speed = 300;
-	lifeSpan = 0.7f;
+	speed = 600;
+	lifeSpan = 1.0f;
 	timeSpan = 0;
 	growth = true;
 	change = true;
@@ -38,7 +38,7 @@ Projectile::Projectile(bool Enabled, float Radius,float Speed, point player, poi
 	enabled = Enabled;
 	rad = Radius;
 	speed = Speed;
-	lifeSpan = 0.7f;
+	lifeSpan = 1.0f;
 	timeSpan = 0;
 	growth = true;
 	change = true;
@@ -67,11 +67,11 @@ void Projectile::update()
 
 		if (growth)
 		{
-			rad += 0.1 * sfw::getDeltaTime();
+			rad += 100 * sfw::getDeltaTime();
 		}
 		else
 		{
-			rad -= 0.1 * sfw::getDeltaTime();
+			rad -= 100 * sfw::getDeltaTime();
 		}
 
 		if (rad >= 15)
@@ -87,24 +87,24 @@ void Projectile::update()
 
 
 		
-		if (change)
-		{
-			vert += 0.1 * sfw::getDeltaTime();
-		}
-		else
-		{
-			vert -= 0.1 * sfw::getDeltaTime();
-		}
+		//if (change)
+		//{
+		//	vert += 0.1 * sfw::getDeltaTime();
+		//}
+		//else
+		//{
+		//	vert -= 0.1 * sfw::getDeltaTime();
+		//}
 
-		if (vert >= 10)
-		{
-			vert = 10;
-			change = false;
-		}
-		else if(vert <= 3)
-		{
-			change = true;
-		}
+		//if (vert >= 10)
+		//{
+		//	vert = 10;
+		//	change = false;
+		//}
+		//else if(vert <= 3)
+		//{
+		//	change = true;
+		//}
 
 	}
 

@@ -76,7 +76,7 @@ Player::Player()
 	rad = 12;
 	playerPos.x = 400.0f;
 	playerPos.y = 300.0f;
-	ROFtimer = 0.5f;
+	ROFtimer = 0.3f;
 	timePassed = 0;
 }
 Player::Player(bool Enabled, float Rad)
@@ -85,7 +85,7 @@ Player::Player(bool Enabled, float Rad)
 	rad = Rad;
 	playerPos.x = 400.0f;
 	playerPos.y = 300.0f;
-	ROFtimer = 0.5f;
+	ROFtimer = 0.3f;
 	timePassed = 0;
 }
 

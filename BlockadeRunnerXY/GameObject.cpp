@@ -1,5 +1,6 @@
 #include "GameObject.h"
 #include <random>
+#include <iostream>
 #include "time.h"
 #include "sfwdraw.h"
 
@@ -38,6 +39,7 @@ void circleParticle::update()
 	if (timeSpan > lifeSpan)
 	{
 		enabled = false;
+		timeSpan = 0;
 	}
 
 	radius -= 20 * sfw::getDeltaTime();
@@ -48,10 +50,9 @@ void circleParticle::update()
 
 void circleParticle::draw()
 {
-	if (enabled == true)
-	{
-		sfw::drawCircle(a.x, a.y, radius);
-	}
+	
+		sfw::drawCircle(Object.x, Object.y, radius, GREEN);
+	std::cout << "Dumb" << std::endl;
 
 }
 

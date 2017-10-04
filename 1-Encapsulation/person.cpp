@@ -1,4 +1,4 @@
-#include "..\3-Inheritance\Person.h"
+//#include "..\3-Inheritance\Person.h"
 #pragma once
 
 #include<iostream>

@@ -2,7 +2,7 @@
 #include "GameObject.h"
 class Player : public GameObject
 {
-	float rad;
+
 public:
 	//Defaults
 	Player();
@@ -14,7 +14,7 @@ public:
 	float timePassed;
 	point playerPos;
 	bool mouseDown;
-
+	float rad;
 
 	virtual void update() override;
 	virtual void draw() override;

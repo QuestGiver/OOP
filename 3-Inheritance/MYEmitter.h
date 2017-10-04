@@ -9,8 +9,15 @@ class Emitter : public GameObject
 
 public:
 	Emitter();
+
+	point Object;
+
+	const int parts = 200;
+
 	//collection of all particles
-	circleParticle particulates[100];
+	circleParticle particulates[200];
+
+	void setParticleLoc(point object, int particleID);
 
 	//current particle id
 

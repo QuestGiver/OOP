@@ -5,6 +5,7 @@
 #include"Enemy.h"
 #include"Projectile.h"
 #include"GameObject.h"
+#include "ParticleEmitter.h"
 
 
 
@@ -16,7 +17,8 @@ public:
 	Enemy enemy[20];
 	Projectile projectile[100];
 	Collision collision;
-
+	ParticleEmitter emitter;
+	float timer;
 	GameState();
 	
 

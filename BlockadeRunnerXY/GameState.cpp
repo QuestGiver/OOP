@@ -23,6 +23,11 @@ void GameState::init()
 	{
 		projectile[i].enabled = false;
 	}
+	timer = 0;
+	for (int i = 0; i < emitter.parts; i++)
+	{
+		emitter.particulates[i].enabled = false;
+	}
 }
 
 
@@ -66,6 +71,22 @@ void GameState::update()
 			projectile[i].update();
 		}
 	}
+	//------------------------------------
+	for (int i = 0; i < 100; i++)
+	{
+		if (projectile[i].enabled == true)
+		{
+			for (int f = 0; f < emitter.parts; f++)
+			{
+				if (emitter.particulates[f].enabled == true)
+				{
+					emitter.particulates[f].Object = projectile[i].a;
+				}
+			}
+		}
+	}
+	
+	emitter.update();
 	//-----------------------------
 	if (mouse.enabled == true)
 	{
@@ -73,13 +94,40 @@ void GameState::update()
 	}
 	//---------------------------------
 
-	
+
+	timer += sfw::getDeltaTime();
+	float respawnTime = 0.5f;
+
+	if (timer > respawnTime)
+	{
+		for (int i = 0; i < ENEMIES_THAT_I_CARE_ABOUT; i++)
+		{
+			if (enemy[i].enabled == false)
+			{
+
+				std::cout << "success!";
+				enemy[i].enabled = true;
+				enemy[i].enemyPos.x = rand() % 800 + 1;
+				enemy[i].enemyPos.y = rand() % 600 + 1;
+
+				while (abs(enemy[i].enemyPos.x - player.playerPos.x) < 100 && abs(enemy[i].enemyPos.y - player.playerPos.y) < 100)
+				{
+					enemy[i].enemyPos.x = rand() % 800 + 1;
+					enemy[i].enemyPos.y = rand() % 600 + 1;
+				}
+
+				timer = 0;
+				break;
+			}
+		}
+	}
+
 
 	for (int i = 0; i < ENEMIES_THAT_I_CARE_ABOUT; i++)
 	{
 		if (enemy[i].enabled == true)
 		{
-			if (collision.isColliding(enemy[i].enemyPos, player.playerPos, enemy[i].rad, 3))
+			if (collision.isColliding(enemy[i].enemyPos, player.playerPos, enemy[i].rad, player.rad))
 			{
 				player.enabled = false;
 				std::cout << "DIE PLAYER DIE" << std::endl;
@@ -104,7 +152,7 @@ void GameState::update()
 
 				}
 			enemy[i].update();
-			point vel = enemy[i].velocity(player.playerPos, 2);
+			point vel = enemy[i].velocity(player.playerPos, 60 * sfw::getDeltaTime());
 			enemy[i].enemyPos.x += vel.x;
 			enemy[i].enemyPos.y += vel.y;
 		}
@@ -117,6 +165,7 @@ void GameState::update()
 
 void GameState::draw()
 {
+	emitter.draw();
 	if (player.enabled == true)
 	{
 		player.draw();
@@ -140,4 +189,5 @@ void GameState::draw()
 			projectile[i].draw();
 		}
 	}
+	
 }

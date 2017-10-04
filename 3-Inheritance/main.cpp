@@ -26,7 +26,7 @@ int main()
 
 	Player guy(true,50,10,15);
 	
-	Emitter emitter;
+	MyEmitter emitter;
 	emitter.spawnInterval = 0.0f;
 	
 
