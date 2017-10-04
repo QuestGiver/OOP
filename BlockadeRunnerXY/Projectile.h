@@ -3,16 +3,25 @@
 class Projectile : public GameObject
 {
 
-	float rad;
 
+	float vert;
 public:
 	//Defaults
 	Projectile();
 	//Explicit
-	Projectile(bool Enabled, float Radius);
+	Projectile(bool Enabled, float Radius, float Speed, point player, point mouse);
 
-	point a;
-	point mouse;
+	float speed;
+	point velocity(point player, point mouse, float Speed);
+	float rad;
+	point vel;
+
+	bool growth;
+	bool change;
+	float timeSpan;	// time it's been alive
+	float lifeSpan; // limit to the time it can alive
+
+
 
 
 	virtual void update() override;

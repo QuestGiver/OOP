@@ -16,11 +16,16 @@ public:
 	Enemy enemy[20];
 	Projectile projectile[100];
 	Collision collision;
+
 	GameState();
 	
 
 	//Use init for setting up stuff normally  reserved for operations before the actual game loop; I.e, spawning items and setting them to disabled.
 	void init();
+
+	//Brain
 	void update();
+
+	//eyes
 	void draw();
 };

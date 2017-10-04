@@ -7,8 +7,20 @@ struct point
 	float y;
 };
 
+struct vector
+{
+	float x;
+	float y;
+	float z;
+};
+
+
+
 class GameObject
 {
+
+
+
 public:
 	//std::string name;
 

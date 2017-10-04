@@ -8,10 +8,12 @@ public:
 	Player();
 	//Explicit
 	Player(bool Enabled, float rad);
-
-	point a;
+	//determines time between shots
+	float ROFtimer;
+	//determines time that has passed between shots
+	float timePassed;
 	point playerPos;
-
+	bool mouseDown;
 
 
 	virtual void update() override;
