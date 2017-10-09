@@ -56,4 +56,10 @@ void circleParticle::draw()
 
 }
 
+void GameObject::update()
+{
+}
 
+void GameObject::draw()
+{
+}

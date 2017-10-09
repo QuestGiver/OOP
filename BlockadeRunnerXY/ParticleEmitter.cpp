@@ -1,7 +1,7 @@
 #include "sfwdraw.h"
 #include "ParticleEmitter.h"
 
-
+#include <iostream>
 
 ParticleEmitter::ParticleEmitter()
 {
@@ -91,13 +91,18 @@ void ParticleEmitter::update()
 
 }
 
+void DoThing(float x, float y, float radius)
+{
+	sfw::drawCircle(x, y, radius,12, RED);
+}
+
 void ParticleEmitter::draw()
 {
-	for (int i = 0; i < 2; i++)
+	for (int i = 0; i < parts; i++)
 	{
 		if (particulates[i].enabled == true)
 		{
-			
+			DoThing(particulates[i].Object.x, particulates[i].Object.y, particulates[i].radius);
 			//particulates[i].draw();
 			//sfw::drawCircle(particulates[i].Object.x, particulates[i].Object.y, particulates[i].radius, GREEN);
 		}
