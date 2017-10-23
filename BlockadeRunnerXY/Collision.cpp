@@ -9,7 +9,7 @@
 //collision::collision(point a, point b, float R1, float R2)
 //{
 //	float sum = R1 + R2;
-//	float d = sqrt(pow(a.x - b.x, 2) + pow(a.y - b.x, 2));
+//	float d = sqrt(pow(a.x - b.x, 2) + pow(a.y - b.y, 2));
 //	collide(d, sum);
 //}
 
